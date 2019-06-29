@@ -19,6 +19,13 @@ CREATE TABLE subscriber
   status SUBSCRIBERS_STATUS NOT NULL           -- current sub disposition
 );
 
+-- create the mailinglist table
+CREATE TABLE mailinglist
+(
+  email VARCHAR(128) NOT NULL UNIQUE,          -- email owned by sub
+  date TIMESTAMP WITH TIME ZONE NOT NULL  -- date/time of registration
+);
+
 CREATE TYPE MAILER_STATUS AS ENUM (
   'SUBSCRIBED',
   'UNSUBSCRIBE'
